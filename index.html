@@ -124,6 +124,19 @@
       from { transform: scale(.96); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
+
+    /* HEART SHAKE ANIMATION */
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-2px); }
+      50% { transform: translateX(2px); }
+      75% { transform: translateX(-2px); }
+      100% { transform: translateX(0); }
+    }
+
+    .shake {
+      animation: shake 1s infinite ease-in-out;
+    }
   </style>
 </head>
 
@@ -132,19 +145,21 @@
 
   <main class="card">
 
-    <!-- CUTE BUNNY PARTIALLY COVERING A HEART -->
+    <!-- CUTE BUNNY + TURTLE + SHAKING HEART -->
     <svg class="art" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
 
-      <!-- HEART BEHIND BUNNY -->
-      <path
-        d="M120 70
-           C120 40 165 35 175 65
-           C185 35 230 40 230 70
-           C230 115 175 135 175 160
-           C175 135 120 115 120 70Z"
-        fill="#ff6b9d"
-        opacity="0.9"
-      />
+      <!-- HEART BEHIND BUNNY (SHAKING) -->
+      <g class="shake">
+        <path
+          d="M120 70
+             C120 40 165 35 175 65
+             C185 35 230 40 230 70
+             C230 115 175 135 175 160
+             C175 135 120 115 120 70Z"
+          fill="#ff6b9d"
+          opacity="0.9"
+        />
+      </g>
 
       <!-- BUNNY BODY -->
       <ellipse cx="120" cy="150" rx="55" ry="45" fill="white"/>
@@ -178,6 +193,12 @@
       <!-- PAWS OVER HEART -->
       <ellipse cx="100" cy="150" rx="14" ry="10" fill="white"/>
       <ellipse cx="140" cy="150" rx="14" ry="10" fill="white"/>
+
+      <!-- TURTLE SNUGGLING WITH BUNNY -->
+      <ellipse cx="80" cy="160" rx="18" ry="12" fill="#a3d977"/> <!-- shell -->
+      <circle cx="65" cy="160" r="8" fill="#a3d977"/> <!-- head -->
+      <circle cx="63" cy="158" r="2" fill="black"/> <!-- eye -->
+      <circle cx="67" cy="163" r="3" fill="#ffb3c6" opacity="0.8"/> <!-- blush -->
 
     </svg>
 
